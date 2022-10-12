@@ -27,4 +27,9 @@ export class AuthService {
     // return the saved user
     return user;
   }
+
+  async getUsers(){
+    const users = await this.prisma.user.findMany();
+    return users;
+  }
 }

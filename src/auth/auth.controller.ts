@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Controller, Post } from '@nestjs/common';
-import { Body } from '@nestjs/common/decorators';
+import { Body, Get } from '@nestjs/common/decorators';
 import { AuthService } from './auth.service';
 import { AuthDto } from './dto';
 
@@ -17,5 +17,10 @@ export class AuthController {
   @Post('signin')
   signIn() {
     return this.authService.signIn();
+  }
+
+  @Get('users')
+  getUsers() {
+    return this.authService.getUsers();
   }
 }
